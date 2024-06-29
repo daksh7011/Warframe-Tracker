@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Warframe Tracker</string>
+    <string name="fissure_title">Fissures</string>
+    <string name="nightwave_title">Nightwave</string>
+    <string name="sortie_title">Sortie</string>
+    <string name="back_button">Back navigation</string>
+</resources>
