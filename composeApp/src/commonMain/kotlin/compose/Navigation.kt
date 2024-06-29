@@ -14,8 +14,7 @@ import warframetracker.composeapp.generated.resources.sortie_title
  */
 enum class WfTrackerScreen(val title: StringResource){
     Home(Res.string.app_name),
-    Fissure(Res.string.fissure_title),
+    Fissures(Res.string.fissure_title),
     Nightwave(Res.string.nightwave_title),
     Sortie(Res.string.sortie_title),
 }
-

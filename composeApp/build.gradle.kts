@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlinxSerialization)
 }
 
 repositories {
@@ -34,16 +35,16 @@ kotlin {
         }
         binaries.executable()
     }
-    
+
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     jvm("desktop")
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -54,10 +55,10 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         val desktopMain by getting
-        
+
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -73,9 +74,14 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
             implementation(libs.ktor.client.core)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.client.serialization.kotlinx.json)
+
+            implementation(libs.kotlinx.serialization.json)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
