@@ -39,5 +39,5 @@ data class Fissures(
     @SerialName("tier")
     val tier: String,
     @SerialName("tierNum")
-    val tierNum: Int
+    val tierNum: Int,
 )
